@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx6dg150rm5hg"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_hj2jj"]
+[ext_resource type="Texture2D" uid="uid://dxohk540rk2fh" path="res://Resources/Assets/Images/bear_front_0.png" id="2_nff6m"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_hj2jj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_nff6m")
