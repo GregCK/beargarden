@@ -2,7 +2,7 @@ class_name Player
 extends CharacterBody2D
 
 
-var face_direction = Vector2.UP
+var face_direction:Vector2i = Vector2.UP
 var state = States.MOVE
 
 const MAX_SPEED = 100
