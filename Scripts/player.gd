@@ -1,19 +1,23 @@
+class_name Player
 extends CharacterBody2D
 
+
+var face_direction = Vector2.UP
+var state = States.MOVE
 
 const MAX_SPEED = 100
 const FRICTION = 1800
 const ACCEL = 600
 
 
-var face_direction = Vector2.UP
+
 
 enum States {
 	MOVE,
-	USING_ITEM
+	WATER
 }
 
-var state = States.MOVE
+signal enter_water_state
 
 
 func _ready():
@@ -24,8 +28,8 @@ func _physics_process(delta):
 	match state:
 		States.MOVE:
 			move_state(delta)
-		States.USING_ITEM:
-			using_item_state(delta)
+		States.WATER:
+			water_state(delta)
 			
 
 func move_state(delta):
@@ -51,7 +55,19 @@ func move_state(delta):
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	
 	move_and_slide()
+	
+	if Input.is_action_just_pressed("water"):
+		switch_state(States.WATER)
 
 
-func using_item_state(delta):
+func switch_state(new_state:States):
+	match new_state:
+		States.MOVE:
+			pass
+		States.WATER:
+			emit_signal("enter_water_state")
+		
+	state = new_state
+
+func water_state(delta):
 	pass
