@@ -10,3 +10,4 @@ const SEED_SPRITE = preload("res://Resources/Assets/Images/seed0.png")
 @export var progress_to_sprite:Dictionary = {
 	0 : SEED_SPRITE
 }
+@export var tilemap_source_id:int = -1

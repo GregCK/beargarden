@@ -104,6 +104,7 @@ func switch_state(new_state:States):
 
 func _on_hotbar_container_hotbar_panel_selected(index):
 	update_selected_item_name_label(index)
+	inventory_selected_index = index
 
 func update_selected_item_name_label(index):
 	if not inventory.has(index):

@@ -11,3 +11,4 @@ progress_to_mature = 10
 progress_to_sprite = {
 0: ExtResource("1_yr750")
 }
+tilemap_source_id = 2
