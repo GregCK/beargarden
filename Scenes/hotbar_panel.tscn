@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://drxy4m3mfwgf4"]
+
+[ext_resource type="Script" path="res://Scripts/Hotbar_Panel.gd" id="1_d07ml"]
+[ext_resource type="Texture2D" uid="uid://bqhqnmrqyx3kc" path="res://Resources/Assets/Images/icon.svg" id="1_nm1a3"]
+
+[node name="HotbarPanel" type="Panel"]
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+script = ExtResource("1_d07ml")
+
+[node name="SelectRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(19, 19)
+scale = Vector2(0.234131, 0.234131)
+texture = ExtResource("1_nm1a3")
+offset = Vector2(4, 4)

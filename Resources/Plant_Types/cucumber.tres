@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Plant_Type" load_steps=2 format=3 uid="uid://pfyrtbjdbq4a"]
+
+[ext_resource type="Script" path="res://Scripts/Plant_Type.gd" id="1_t72ho"]
+
+[resource]
+script = ExtResource("1_t72ho")
+plant_name = "Cucumber"
+drinking_period = 4
+progress_to_mature = 10
+progress_to_sprite = {}

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Plant_Type" load_steps=3 format=3 uid="uid://dryckb281f6tv"]
+
+[ext_resource type="Script" path="res://Scripts/Plant_Type.gd" id="1_16etm"]
+[ext_resource type="Texture2D" uid="uid://dgv7yw3g5rvel" path="res://Resources/Assets/Images/seed0.png" id="1_yr750"]
+
+[resource]
+script = ExtResource("1_16etm")
+plant_name = "Basil"
+drinking_period = 6
+progress_to_mature = 10
+progress_to_sprite = {
+0: ExtResource("1_yr750")
+}

@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://dx6dg150rm5hg"]
+[gd_scene load_steps=6 format=3 uid="uid://dx6dg150rm5hg"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_hj2jj"]
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_hj2jj"]
 [ext_resource type="Texture2D" uid="uid://svv4vclo07wi" path="res://Resources/Assets/Images/bear_front_32x32_0.png" id="2_py0j5"]
+[ext_resource type="Script" path="res://Scripts/HotBar.gd" id="3_2bdjw"]
+[ext_resource type="PackedScene" uid="uid://drxy4m3mfwgf4" path="res://Scenes/hotbar_panel.tscn" id="3_kt22t"]
+[ext_resource type="Script" path="res://Scripts/Hotbar_Container.gd" id="4_p5jo2"]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_hj2jj")
@@ -9,3 +12,76 @@ script = ExtResource("1_hj2jj")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("2_py0j5")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HotBar" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("3_2bdjw")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/HotBar"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.647059, 0.666667, 0.427451, 0.886275)
+
+[node name="SelectedItemNameLabel" type="Label" parent="CanvasLayer/HotBar"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -28.0
+offset_right = 157.0
+offset_bottom = -5.0
+text = "Selected Item Name"
+
+[node name="HotbarContainer" type="GridContainer" parent="CanvasLayer/HotBar"]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 60.0
+columns = 10
+script = ExtResource("4_p5jo2")
+
+[node name="HotbarPanel" parent="CanvasLayer/HotBar/HotbarContainer" instance=ExtResource("3_kt22t")]
+layout_mode = 2
+
+[node name="HotbarPanel2" parent="CanvasLayer/HotBar/HotbarContainer" instance=ExtResource("3_kt22t")]
+layout_mode = 2
+
+[node name="HotbarPanel3" parent="CanvasLayer/HotBar/HotbarContainer" instance=ExtResource("3_kt22t")]
+layout_mode = 2
+
+[node name="HotbarPanel4" parent="CanvasLayer/HotBar/HotbarContainer" instance=ExtResource("3_kt22t")]
+layout_mode = 2
+
+[node name="HotbarPanel5" parent="CanvasLayer/HotBar/HotbarContainer" instance=ExtResource("3_kt22t")]
+layout_mode = 2
+
+[node name="HotbarPanel6" parent="CanvasLayer/HotBar/HotbarContainer" instance=ExtResource("3_kt22t")]
+layout_mode = 2
+
+[node name="HotbarPanel7" parent="CanvasLayer/HotBar/HotbarContainer" instance=ExtResource("3_kt22t")]
+layout_mode = 2
+
+[node name="HotbarPanel8" parent="CanvasLayer/HotBar/HotbarContainer" instance=ExtResource("3_kt22t")]
+layout_mode = 2
+
+[node name="HotbarPanel9" parent="CanvasLayer/HotBar/HotbarContainer" instance=ExtResource("3_kt22t")]
+layout_mode = 2
+
+[node name="HotbarPanel10" parent="CanvasLayer/HotBar/HotbarContainer" instance=ExtResource("3_kt22t")]
+layout_mode = 2
+
+[connection signal="hotbar_panel_selected" from="CanvasLayer/HotBar/HotbarContainer" to="." method="_on_hotbar_container_hotbar_panel_selected"]

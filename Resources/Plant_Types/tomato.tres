@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Plant" load_steps=2 format=3 uid="uid://c647j5q3dfrgf"]
+
+[ext_resource type="Script" path="res://Scripts/Plant_Type.gd" id="1_1ynat"]
+
+[resource]
+script = ExtResource("1_1ynat")
+plant_name = "Tomato"
+drinking_period = 3
