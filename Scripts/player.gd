@@ -59,6 +59,8 @@ func move_state(delta):
 	if Input.is_action_just_pressed("water"):
 		switch_state(States.WATER)
 
+func water_state(delta):
+	pass
 
 func switch_state(new_state:States):
 	match new_state:
@@ -68,6 +70,3 @@ func switch_state(new_state:States):
 			emit_signal("enter_water_state")
 		
 	state = new_state
-
-func water_state(delta):
-	pass
