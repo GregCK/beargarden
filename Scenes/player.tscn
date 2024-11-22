@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://dx6dg150rm5hg"]
 
-[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_hj2jj"]
+[ext_resource type="Script" path="res://Scripts/Node2D/Player.gd" id="1_hj2jj"]
 [ext_resource type="Texture2D" uid="uid://svv4vclo07wi" path="res://Resources/Assets/Images/bear_front_32x32_0.png" id="2_py0j5"]
-[ext_resource type="Script" path="res://Scripts/HotBar.gd" id="3_2bdjw"]
+[ext_resource type="Script" path="res://Scripts/Control/HotBar.gd" id="3_2bdjw"]
 [ext_resource type="PackedScene" uid="uid://drxy4m3mfwgf4" path="res://Scenes/hotbar_panel.tscn" id="3_kt22t"]
-[ext_resource type="Script" path="res://Scripts/Hotbar_Container.gd" id="4_p5jo2"]
+[ext_resource type="Script" path="res://Scripts/Control/HotbarContainer.gd" id="4_4eevo"]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_hj2jj")
@@ -52,7 +52,7 @@ layout_mode = 0
 offset_right = 640.0
 offset_bottom = 60.0
 columns = 10
-script = ExtResource("4_p5jo2")
+script = ExtResource("4_4eevo")
 
 [node name="HotbarPanel" parent="CanvasLayer/HotBar/HotbarContainer" instance=ExtResource("3_kt22t")]
 layout_mode = 2

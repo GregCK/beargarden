@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dbrhyve5hlie8"]
 
-[ext_resource type="Script" path="res://Scripts/Held_Seed.gd" id="1_vh663"]
+[ext_resource type="Script" path="res://Scripts/Node2D/HeldSeed.gd" id="1_vh663"]
 [ext_resource type="Texture2D" uid="uid://dgv7yw3g5rvel" path="res://Resources/Assets/Images/seed0.png" id="2_fdevk"]
 
 [node name="HeldSeed" type="Node2D"]

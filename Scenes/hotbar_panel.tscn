@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://drxy4m3mfwgf4"]
 
-[ext_resource type="Script" path="res://Scripts/Hotbar_Panel.gd" id="1_d07ml"]
+[ext_resource type="Script" path="res://Scripts/Control/HotbarPanel.gd" id="1_d07ml"]
 [ext_resource type="Texture2D" uid="uid://bqhqnmrqyx3kc" path="res://Resources/Assets/Images/icon.svg" id="1_nm1a3"]
 
 [node name="HotbarPanel" type="Panel"]

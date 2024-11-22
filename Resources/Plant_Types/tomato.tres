@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Plant_Type" load_steps=3 format=3 uid="uid://c647j5q3dfrgf"]
 
 [ext_resource type="Texture2D" uid="uid://dgv7yw3g5rvel" path="res://Resources/Assets/Images/seed0.png" id="1_k2d2q"]
-[ext_resource type="Script" path="res://Scripts/Plant_Type.gd" id="2_5waua"]
+[ext_resource type="Script" path="res://Scripts/Resource/PlantType.gd" id="2_5waua"]
 
 [resource]
 script = ExtResource("2_5waua")
