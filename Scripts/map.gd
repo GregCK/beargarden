@@ -47,12 +47,12 @@ func _input(event):
 	if event.is_action_released("water"):
 		if player.state == Player.States.WATER:
 			water()
+	if event.is_action_pressed("cancel"):
+		gridHelperLarge.hide()
+		player.switch_state(Player.States.MOVE)
 
 
 func water():
-	#groundTileMapLayer.set_cell(tile_pos_player_is_on, DIRT_WET, Vector2i(0,0), 0)
-	
-
 	for i in range(-1, 2):
 		for j in range(-1, 2):
 			var adjustment_vector = Vector2i(i, j)
