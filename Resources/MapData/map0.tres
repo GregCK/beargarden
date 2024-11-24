@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="MapData" load_steps=6 format=3 uid="uid://4xkvobkpiysv"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/MapData.gd" id="1_3uiar"]
+[ext_resource type="Script" path="res://Scripts/Resource/GroundData/SoilData.gd" id="1_8s5xq"]
+[ext_resource type="Script" path="res://Scripts/Resource/CellData.gd" id="2_loc52"]
+
+[sub_resource type="Resource" id="Resource_0w4ns"]
+script = ExtResource("1_8s5xq")
+is_wet = false
+
+[sub_resource type="Resource" id="Resource_y2yip"]
+script = ExtResource("2_loc52")
+groundData = SubResource("Resource_0w4ns")
+
+[resource]
+script = ExtResource("1_3uiar")
+pos_to_cellData = {
+Vector2i(0, 0): SubResource("Resource_y2yip")
+}

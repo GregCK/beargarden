@@ -1,9 +1,14 @@
+class_name Map
 extends Node2D
 
 const GRID_SIZE:int = 32
 
 const DIRT_DRY:int = 1
 const DIRT_WET:int = 2
+
+@export var preMapData:MapData
+var mapData:MapData
+
 
 @onready var gridHelperFront:Node2D = $GridHelpers/GridHelperFront
 @onready var gridHelperLarge:Node2D = $GridHelpers/GridHelperLarge
@@ -20,6 +25,8 @@ func _ready():
 	player.connect("enter_plant_state", _on_player_enter_plant_state)
 	gridHelperLarge.hide()
 	gridHelperFront.hide()
+	mapData = preMapData.duplicate(true)
+	groundTileMapLayer.generate_tiles_from_mapData(mapData)
 
 func _physics_process(_delta):
 	if player:
@@ -65,7 +72,10 @@ func water():
 	for i in range(-1, 2):
 		for j in range(-1, 2):
 			var adjustment_vector = Vector2i(i, j)
-			groundTileMapLayer.set_cell(tile_pos_player_is_on + adjustment_vector, DIRT_WET, Vector2i(0,0), 0)
+			var curr_tile:Vector2i = tile_pos_player_is_on + adjustment_vector
+			
+			mapData.water_tile(curr_tile)
+			groundTileMapLayer.set_cell(curr_tile, DIRT_WET, Vector2i(0,0), 0)
 	
 	
 	gridHelperLarge.hide()
